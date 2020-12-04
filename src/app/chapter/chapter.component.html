@@ -1,0 +1,23 @@
+<div class="container" *ngIf="chapters">
+  
+  <div class="row">
+
+    <div class="col-12 col-sm-6">
+      <app-bible-book></app-bible-book>
+    </div>
+
+    <div class="col-12 col-sm-6">
+      <ul>
+        <li *ngFor="let chapter of chapters">
+          <a [routerLink]="['/bible-book', chapter.bibleId, 'chapter', chapter.id]">
+            <h4>{{chapter.id}}</h4>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+
+
+</div>

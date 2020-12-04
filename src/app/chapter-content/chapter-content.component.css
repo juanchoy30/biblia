@@ -1,0 +1,14 @@
+body {
+    background-color: #fffbe3;
+}
+
+div.verses {
+    display: inline;
+    text-align: justify;
+    text-justify: auto;
+}
+
+div.verses span.versiculo {
+    font-style: italic;
+    color: gray;
+}

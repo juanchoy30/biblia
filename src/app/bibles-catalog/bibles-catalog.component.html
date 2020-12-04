@@ -1,0 +1,48 @@
+<div class="componentBody">
+
+  <div class="container" *ngIf="bibles">
+
+    <div class="d-flex justify-content-center mb-5">
+      <div class="commentBox" [@expand]>
+
+        <h5 class="card-title">Hello, please type your language!</h5>
+
+        <input id="typeahead-basic" type="text" class="form-control" 
+        [(ngModel)]="model" 
+        [ngbTypeahead]="search"
+        (selectItem)="selectedItem($event)"
+        #SearchInput>   
+      </div>
+    </div>
+  
+  
+    <div *ngIf="characterData">
+      <button class="btn btn-danger" (click)="SearchClick">Search</button>
+    </div>
+    
+    <div class="row" *ngIf="LanguageSelected">
+      <div class="col-12 col-sm-6 col-lg-4 mb-3" *ngFor="let selected of LanguageSelected">
+        <div class="bibleBox border" [@expand]>
+          <a [routerLink]="['/bible', selected.id, 'bible-books']">
+            <h3> <span class="abbr">{{selected.abbreviation}}</span> | {{selected.nameLocal}} <span class="engName">({{selected.name}})</span></h3>
+            <p>Language: {{selected.language.name}}</p>
+            <p>{{selected.description}}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <!--
+  
+    <div class="d-flex justify-content-center mb-5">
+      <div class="card text-white bg-warning" style="max-width: 18rem;">
+        <div class="card-body">
+  
+      </div>
+    </div>
+    -->
+  
+  
+  </div>
+</div>
+

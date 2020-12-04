@@ -1,0 +1,13 @@
+<div class="container" *ngIf="books">
+
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <div *ngFor="let book of books">
+        <a [routerLink]="['/bible-books', book.bibleId, 'book', book.id]">
+          <h3>{{book.id}} | {{book.name}}</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
